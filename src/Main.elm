@@ -1,36 +1,29 @@
-module Main exposing (..)
+module Main exposing (Model, Place(..), greet, initialModel)
 
-import Html exposing (Html)
+
+type Place
+    = World
+    | Elm
 
 
 type alias Model =
-    { welcomeText : String }
+    { text : String, place : Place }
 
 
-model : Model
-model =
-    { welcomeText = "hello" }
+initialModel : Model
+initialModel =
+    Model "Hello" World
 
 
-type Msg
-    = Noop
+greet : Model -> String
+greet m =
+    let
+        place =
+            case m.place of
+                World ->
+                    "World"
 
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    ( model, Cmd.none )
-
-
-view : Model -> Html Msg
-view model =
-    Html.h1 [] [ Html.text model.welcomeText ]
-
-
-main : Program Never Model Msg
-main =
-    Html.program
-        { init = ( model, Cmd.none )
-        , update = update
-        , view = view
-        , subscriptions = \model -> Sub.none
-        }
+                Elm ->
+                    "Elm"
+    in
+    m.text ++ " " ++ place

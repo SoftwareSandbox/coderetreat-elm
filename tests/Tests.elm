@@ -1,19 +1,40 @@
-module Tests exposing (..)
+module Tests exposing (suite)
 
 -- import Fuzz exposing (Fuzzer, int, list, string)
 
 import Expect exposing (Expectation)
-import Test exposing (..)
 import Main exposing (..)
+import Test exposing (..)
 
 
 suite : Test
 suite =
     describe "Main"
-        [ describe "initial model"
-            [ test "returns hello" <|
+        [ describe "reading properties of a record"
+            [ test "string" <|
                 \_ ->
-                    Expect.equal model.welcomeText "hello"
+                    Expect.equal initialModel.text "Hello"
+            , test "Union Type" <|
+                \_ ->
+                    Expect.equal initialModel.place World
+            ]
+        , describe "union type in action"
+            [ test "world" <|
+                \_ ->
+                    let
+                        world =
+                            Model "Hello" World
+                    in
+                    greet world
+                        |> Expect.equal "Hello World"
+            , test "elm" <|
+                \_ ->
+                    let
+                        elm =
+                            Model "Snarf Snarf" Elm
+                    in
+                    greet elm
+                        |> Expect.equal "Snarf Snarf Elm"
             ]
         ]
 

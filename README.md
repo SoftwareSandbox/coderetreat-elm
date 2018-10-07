@@ -8,28 +8,21 @@ Implementation can go straight in there, or create and import files as necessary
 1. Clone this repository
 
 2. Install [Elm](http://elm-lang.org)
-
-3. Install Elm stuff
 ```bash
-elm package install
+npm install -g elm elm-format
 ```
 
-4. Install elm-test
+3. Install elm-test
 
 Because elm-test isn't available as regular binary, you'll need Node and install it via NPM.
 ```bash
-npm install -g elm-test
+npm install -g elm-test@beta
 ```
 
-5. Run Elm stuff
-```bash
-elm-reactor
-```
-
-6. Run tests
+4. Run tests
 ```bash
 elm-test
 ```
-Add the `--watch` flag if you want them to be continuously run.
+Add the `--watch` flag if you want them to be run continuously.
 
 GL HF!
