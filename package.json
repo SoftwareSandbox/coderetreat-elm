@@ -1,0 +1,28 @@
+{
+  "name": "coderetreat-elm",
+  "version": "1.0.0",
+  "description": "CodeRetreat template project for Elm",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "elm-test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoftwareSandbox/coderetreat-elm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoftwareSandbox/coderetreat-elm/issues"
+  },
+  "homepage": "https://github.com/SoftwareSandbox/coderetreat-elm#readme",
+  "devDependencies": {
+    "elm-test": "^0.19.1-revision6"
+  },
+  "dependencies": {
+    "elm": "^0.19.1",
+    "elm-format": "^0.8.5"
+  }
+}
